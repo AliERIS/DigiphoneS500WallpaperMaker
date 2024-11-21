@@ -1,0 +1,3 @@
+For a Feature Phone Digiphone S500 with mt6261 chipset equipped with 4MB ram 
+Simply
+![External Image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_akSfee5wCB9JZfckED3B62uiYqlJC-kcrQoNkAuj3qIwsFjeYHFk9pGTkrSyHrpwdtz0tmqwnspTCPMyC5JsurWLL4Dg6sME3sHWc9Mc_rJT5OzEtimACTyHg5MR9ZyPKXD0Tc2uDXxjX6zlSGhHxHDS86qRLipzw4lQLG2r4TxNKK6YkUssJqvh4Ug/s16000/54hjww.jpg)
