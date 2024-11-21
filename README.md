@@ -1,5 +1,5 @@
 For a Feature Phone Digiphone S500 with mt6261 chipset equipped with 4MB ram 
-Simply
+Simply creates 240*320 jpg images and preview images
 ![External Image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_akSfee5wCB9JZfckED3B62uiYqlJC-kcrQoNkAuj3qIwsFjeYHFk9pGTkrSyHrpwdtz0tmqwnspTCPMyC5JsurWLL4Dg6sME3sHWc9Mc_rJT5OzEtimACTyHg5MR9ZyPKXD0Tc2uDXxjX6zlSGhHxHDS86qRLipzw4lQLG2r4TxNKK6YkUssJqvh4Ug/s16000/54hjww.jpg)
 ![External Image](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnRRdZxFXpmVHm4HRjHFOnlEhoHb5Q4HsAtE-JJiRiXQoeQSSjYszdOvL0fUjKZGvi1tovvF0o4Au_B8llSAHhoiqR5v0m17H2LpBM3HkhtxoF7essgFH9HdF12P7sTn1x6XuF-aB-eIE_-k81yu15FQIDDSj8xMn9vcJM5GYhIPBJzibiW_UuNxepZ6g/s16000/Preview.jpg)
 
