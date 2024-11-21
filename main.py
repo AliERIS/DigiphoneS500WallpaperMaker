@@ -3,6 +3,7 @@ from tkinter import filedialog
 from tkinter import ttk
 from PIL import Image, ImageTk
 import os
+import webbrowser
 
 def open_image():
     global img, img_display
@@ -35,10 +36,16 @@ def show_main_screen():
     loading_frame.pack_forget()  # Yükleniyor ekranını gizle
     main_frame.pack(fill='both', expand=True)  # Ana ekranı göster
 
+def open_blog():
+    webbrowser.open_new("https://digiphone-s500.blogspot.com")
+
+def open_youtube():
+    webbrowser.open_new("https://www.youtube.com/channel/UCaUQMNxNK7GuEpi4TnXPrIg")
+
 # Tkinter arayüzü oluştur
 root = tk.Tk()
 root.title("Digiphone S500 Duvar Kağıdı Oluşturucu")
-root.geometry("400x500")  # Pencere boyutunu ayarla
+root.geometry("400x600")  # Pencere boyutunu ayarla
 root.configure(bg='black')  # Arka plan rengini siyah yap
 
 # Stil oluştur
@@ -85,6 +92,16 @@ browse_button.pack(pady=5)
 # Kaydet butonu
 save_button = ttk.Button(main_frame, text="Dönüştür", command=save_image, state=tk.DISABLED)
 save_button.pack(pady=5)
+
+# Blog linki
+blog_link = tk.Label(main_frame, text="digiphone s500 Blog", fg="blue", cursor="hand2", bg='black')
+blog_link.pack(pady=5)
+blog_link.bind("<Button-1>", lambda e: open_blog())
+
+# YouTube linki
+youtube_link = tk.Label(main_frame, text="Digiphone S500 YouTube Kanalı", fg="blue", cursor="hand2", bg='black')
+youtube_link.pack(pady=5)
+youtube_link.bind("<Button-1>", lambda e: open_youtube())
 
 # Yükleniyor ekranını 2 saniye sonra gizle ve ana ekranı göster
 root.after(2000, show_main_screen)
