@@ -31,24 +31,67 @@ def save_image():
     img_resized.save(output_image_path, 'JPEG')
     print(f"Resim başarıyla {output_image_path} olarak kaydedildi.")
 
+def show_main_screen():
+    loading_frame.pack_forget()  # Yükleniyor ekranını gizle
+    main_frame.pack(fill='both', expand=True)  # Ana ekranı göster
+
 # Tkinter arayüzü oluştur
 root = tk.Tk()
 root.title("Digiphone S500 Duvar Kağıdı Oluşturucu")
+root.geometry("400x500")  # Pencere boyutunu ayarla
+root.configure(bg='black')  # Arka plan rengini siyah yap
 
 # Stil oluştur
 style = ttk.Style()
-style.theme_use('alt')  # 'clam', 'alt', 'default', 'classic' gibi temalar kullanılabilir
+style.theme_use('clam')  # 'clam', 'alt', 'default', 'classic' gibi temalar kullanılabilir
+
+# ttk bileşenlerinin arka plan rengini siyah yap
+style.configure('TFrame', background='black')
+style.configure('TLabel', background='black', foreground='white')
+style.configure('TButton', background='black', foreground='white')
+style.configure('TProgressbar', background='black')
+
+# Yükleniyor ekranı oluştur
+loading_frame = ttk.Frame(root)
+loading_frame.pack(fill='both', expand=True)
+
+# Yükleniyor resmi ekle
+loading_image = Image.open("loading.jpg")
+loading_image = loading_image.resize((200, 200), Image.LANCZOS)
+loading_image_tk = ImageTk.PhotoImage(loading_image)
+loading_label_image = ttk.Label(loading_frame, image=loading_image_tk)
+loading_label_image.pack(pady=10)
+
+# Yükleniyor metni ekle
+loading_label = ttk.Label(loading_frame, text="Yükleniyor...")
+loading_label.pack(pady=10)
+
+# Yükleme çubuğu ekle
+progress = ttk.Progressbar(loading_frame, orient="horizontal", length=200, mode="indeterminate")
+progress.pack(pady=10)
+progress.start()
+
+# Ana ekranı oluştur
+main_frame = ttk.Frame(root)
 
 # Resim önizleme alanı
-canvas = tk.Canvas(root, width=240, height=320)
+canvas = tk.Canvas(main_frame, width=240, height=320, bg='black', highlightthickness=0)
 canvas.pack(pady=10)
 
 # Gözat butonu
-browse_button = ttk.Button(root, text="Gözat", command=open_image)
+browse_button = ttk.Button(main_frame, text="Gözat", command=open_image)
 browse_button.pack(pady=5)
 
 # Kaydet butonu
-save_button = ttk.Button(root, text="Dönüştür", command=save_image, state=tk.DISABLED)
+save_button = ttk.Button(main_frame, text="Dönüştür", command=save_image, state=tk.DISABLED)
 save_button.pack(pady=5)
+
+# Yükleniyor ekranını 2 saniye sonra gizle ve ana ekranı göster
+root.after(2000, show_main_screen)
+
+# İkonu ayarla
+icon_image = Image.open("loading.jpg")
+icon_image.save("loading.ico", format='ICO')
+root.iconbitmap("loading.ico")
 
 root.mainloop()
